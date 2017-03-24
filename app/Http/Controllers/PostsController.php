@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
     public function index(){
-    	return View::make('posts.index');
+    	return View('posts.index');
     }
 }
