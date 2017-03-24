@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', ['as'=>'home','uses'=>'PostsController@index']);
+Route::get('/', ['as'=>'home','uses'=>'PostsController@getIndex']);
+Route::get('/posts/{slug}', ['as'=>'posts.show','uses'=>'PostsController@getShow']);
+

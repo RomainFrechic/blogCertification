@@ -9,10 +9,10 @@ class Post extends Model
    protected $guarded = ['id','created_at'];
 
    public function user(){
-   	return $this->belongsTo('User');
+   	return $this->belongsTo('App\User');
    }
 
    public function comments(){
-   	return $this->hasMany('Comment');
+   	return $this->hasMany('App\Comment');
    }
 }
