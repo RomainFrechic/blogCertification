@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+
     public function getIndex(){
 
     	$posts = Post::paginate(5);
     	return View('posts.index', compact('posts'));
     }
+
 
     public function getShow($slug){
 

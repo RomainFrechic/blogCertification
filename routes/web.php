@@ -12,5 +12,10 @@
 */
 
 Route::get('/', ['as'=>'home','uses'=>'PostsController@getIndex']);
+
 Route::get('/posts/{slug}', ['as'=>'posts.show','uses'=>'PostsController@getShow']);
+
+Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
+
+Route::post('check',['as'=>'users.check','uses'=>'UserController@check']);
 
