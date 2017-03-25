@@ -63,7 +63,16 @@
 
     <div class="container">
 
-     @yield('content')
+    <!-- Gestion des message d'erreur dans le dossier layouts-->
+    @if(Session::has('error'))
+      <div class="alert alert-danger">{{ Session::get('error') }}</div>
+    @endif 
+
+    @if(Session::has('success'))
+      <div class="alert alert-success">{{ Session::get('success') }}</div>
+    @endif 
+
+    @yield('content')
 
     </div><!-- /.container -->
 

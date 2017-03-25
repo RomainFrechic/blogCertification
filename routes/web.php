@@ -19,3 +19,5 @@ Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
 
 Route::post('check',['as'=>'users.check','uses'=>'UserController@check']);
 
+Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
+
