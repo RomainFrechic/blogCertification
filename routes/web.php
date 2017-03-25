@@ -21,3 +21,5 @@ Route::post('check',['as'=>'users.check','uses'=>'UserController@check']);
 
 Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
+Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
+
