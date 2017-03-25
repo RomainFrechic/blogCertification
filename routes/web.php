@@ -23,7 +23,7 @@ Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 Route::group(['before'=>'auth'], function(){
 
-	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin','before'=>'auth']);
+	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
 });
 
 Route::group(['before'=>'guest'], function(){

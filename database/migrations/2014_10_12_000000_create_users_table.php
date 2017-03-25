@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
                 'username'=>'Romain',
                 'email'=>'RomainFrechic@outlook.fr',
                 'password'=>Hash::make('admin'),
-                'is_admin'=>true,
+                'is_admin'=>boolean true,
 
             ]);
     }
