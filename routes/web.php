@@ -55,5 +55,5 @@ Route::group(['before'=>'guest'], function(){
 
 Route::group(['before'=>'auth'], function(){
 
-	Route::post('posts/{id}/comments/create',['as'=>'comments.create','CommentsController@create']);
+	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentsController@create']);
 });

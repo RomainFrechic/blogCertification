@@ -11,8 +11,13 @@ class Comment extends Model
     public static function boot(){
     	parent::boot();
     	self::created(function($comment){
-    $comment->post()->count_comment = $comment->post()->comments()->count();
-    $comment->post()->save();
+    $comment->post->count_comment = $comment->post->comments->count();
+    $comment->post->save();
+    	});
+
+    	self::deleted(function($comment){
+    $comment->post->count_comment = $comment->post->comments->count();
+    $comment->post->save();
     	});
 
     	return true;
