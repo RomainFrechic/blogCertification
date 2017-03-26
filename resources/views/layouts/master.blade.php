@@ -50,8 +50,12 @@
             <ul class="nav navbar-nav">
 
               @if(Auth::check())
+              
+               @if(Auth::user()->is_admin)
 
               <li><a href="{{ URL::route('home.admin') }}">Administration</a></li>
+
+                @endif
 
               <li class="pull-right"><a href="{{ URL::route('users.logout') }}">Se Déconnecter</a></li>
               @else
@@ -63,6 +67,7 @@
 
               @endif
 
+               
               <li class="active"><a href="#">Home</a></li>
 
               <li><a href="#about">About</a></li>
@@ -85,7 +90,7 @@
         <div class="alert alert-success">{{ Session::get('success') }}</div>
         @endif 
         
-        @if(Auth::check())
+        <!-- @if(Auth::check())
         @if(Auth::user()->is_admin)
         <div class="alert alert-success">Vous êtes administrateur</div>
         @else
@@ -93,7 +98,7 @@
         @endif
         @else
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
-        @endif
+        @endif -->
         @yield('content')
 
       </div><!-- /.container -->

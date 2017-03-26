@@ -21,10 +21,35 @@ class UserController extends Controller
 		return View('users.admin',compact('users'));
 	}
 
+	public function delete($id){
+		$user = User::find($id);
+		$user->delete();
+		return Redirect::back()->with('success','L\'utilisateur à bien été supprimer');
+	}
+
+
+
+	public function permission($id){
+		$user = User::find($id);
+		if($user->is_admin){
+			$user->is_admin = 0;
+			$user->save();
+		}else{
+			$user->is_admin = 1;
+			$user->save();
+		}
+		return Redirect::back()->with('success','La permission à bien été modifier');
+	}
+
+
+
 
 	public function login(){
 		return View('users.login');
 	}
+
+
+
 
 	public function check(){
 
@@ -58,16 +83,22 @@ class UserController extends Controller
 	}
 
 
+
+
 	public function logout(){
 		Auth::logout();
 		return Redirect::route('home')->with('success','Vous êtes maintenant déconnecté');
 	}
 
 
+
+
 	public function register(){
 
 		return View('users.register');
 	}
+
+
 
 	public function store(){
 
