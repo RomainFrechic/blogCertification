@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
+	public function admin(){
+		$users = User::all();
+		return View('users.admin',compact('users'));
+	}
+
+
 	public function login(){
 		return View('users.login');
 	}

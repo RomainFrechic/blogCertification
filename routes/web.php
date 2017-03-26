@@ -41,6 +41,12 @@ Route::group(['before'=>'admin'], function(){
 	Route::get('admin/comments',['as'=>'comments.admin','uses'=>'CommentsController@admin']);
 
 	Route::delete('admin/comments/delete/{id}',['as'=>'comments.delete','uses'=>'CommentsController@delete']);
+
+	Route::get('admin/users',['as'=>'users.admin','uses'=>'UserController@admin']);
+
+	Route::delete('admin/users/{id}',['as'=>'users.delete','uses'=>'UserController@delete']);
+
+	Route::post('admin/permission/{id}',['as'=>'users.permission','uses'=>'UserController@permission']);
 });
 
 

@@ -87,9 +87,9 @@
         
         @if(Auth::check())
         @if(Auth::user()->is_admin)
-        <div class="alert alert-danger">Vous n'avez pas les droits d'administration</div>
-        @else
         <div class="alert alert-success">Vous êtes administrateur</div>
+        @else
+        <div class="alert alert-danger">Vous n'avez pas les droits d'administration</div>
         @endif
         @else
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
