@@ -35,6 +35,8 @@ Route::group(['before'=>'auth'], function(){
 	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostsController@delete']);
 
 	Route::get('admin/posts/create',['as'=>'posts.create','uses'=>'PostsController@create']);
+
+	Route::get('admin/posts/store',['as'=>'posts.store','uses'=>'PostsController@store']);
 });
 
 
@@ -51,4 +53,7 @@ Route::group(['before'=>'guest'], function(){
 });
 
 
+Route::group(['before'=>'auth'], function(){
 
+	Route::post('posts/{id}/comments/create',['as'=>'comments.create','CommentsController@create']);
+});

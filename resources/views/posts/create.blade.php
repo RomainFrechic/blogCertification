@@ -3,7 +3,9 @@
 
 @section('content')
 
-{{ Form::open(['route'=>['posts.update',$post->id],'method'=>'post']) }}
+<h2>Créer un Article</h2>
+
+{{ Form::open(['route'=>['posts.update',0],'method'=>'post']) }}
 
 	<div class="form-group">
 		

@@ -8,6 +8,16 @@ class Comment extends Model
 {
     protected $guarded = ['id','created_at'];
 
+    public static function boot(){
+    	parent::boot();
+    	self::created(function($comment){
+    $comment->post()->count_comment = $comment->post()->comments()->count();
+    $comment->post()->save();
+    	});
+
+    	return true;
+    }
+
     public function post(){
     	return $this->belongsTo('App\Post');
     }

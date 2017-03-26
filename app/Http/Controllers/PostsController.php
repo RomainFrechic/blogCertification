@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
 
 class PostsController extends Controller
 {
@@ -38,7 +41,12 @@ class PostsController extends Controller
      public function edit($id){
 
         $post = Post::find($id);
-        return View('posts.edit',compact('post'));
+        if($post){
+
+            return View('posts.edit',compact('post'));    
+        }else{
+            return View('posts.create');
+        }
     }
 
 
@@ -60,11 +68,31 @@ class PostsController extends Controller
         if($validation->fails()){
             return Redirect::back()->withErrors($validation);
         }else{
-            $post = Post::find($id);
-            $post->name = $inputs['name'];
-            $post->content = $inputs['content'];
-            $post->save();
-            return Redirect::back()->with('success','Votre post à bien été modifier');
+            $post = Post::find('id');
+            if($post){
+
+                $post = Post::find($id);
+                $post->name = $inputs['name'];
+                $post->content = $inputs['content'];
+                $post->slug = Str::slug($inputs['name']);
+                $post->save();
+                return Redirect::back()->with('success','Votre post à bien été modifier');    
+            }else{
+
+                $post = Post::create([
+                 'name'=>$inputs['name'],
+                'content'=>$inputs['content'],
+                'slug'=>Str::slug($inputs['name']),
+                'user_id'=>Auth::user()->id, 
+
+                ]);
+                $post->save();
+                return Redirect::route('posts.edit',$post->id)->with('success','Votre post à bien été créer');    
+
+            }
         }
-    }
+     }
+
+
+
 }
