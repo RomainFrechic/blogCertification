@@ -22,7 +22,7 @@ Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 
 
-Route::group(['before'=>'auth'], function(){
+Route::group(['before'=>'admin'], function(){
 
 	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
 
@@ -37,6 +37,10 @@ Route::group(['before'=>'auth'], function(){
 	Route::get('admin/posts/create',['as'=>'posts.create','uses'=>'PostsController@create']);
 
 	Route::get('admin/posts/store',['as'=>'posts.store','uses'=>'PostsController@store']);
+
+	Route::get('admin/comments',['as'=>'comments.admin','uses'=>'CommentsController@admin']);
+
+	Route::delete('admin/comments/delete/{id}',['as'=>'comments.delete','uses'=>'CommentsController@delete']);
 });
 
 

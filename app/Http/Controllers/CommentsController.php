@@ -12,6 +12,21 @@ use Illuminate\Support\Str;
 
 class CommentsController extends Controller
 {
+
+	public function admin(){
+		$comments = Comment::all();
+		return View('comments.admin',compact('comments'));
+	}
+
+
+	public function delete($id){
+		$comments = Comment::find($id);
+		$comments->delete();
+		return Redirect::back()->with('success','Le commentaire à bien été supprimer');
+	}
+
+
+
     public function create($id){
     	$post = Post::find($id);
     	$inputs = Input::all();

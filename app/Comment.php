@@ -16,8 +16,10 @@ class Comment extends Model
     	});
 
     	self::deleted(function($comment){
+             if($comment->post){
     $comment->post->count_comment = $comment->post->comments->count();
     $comment->post->save();
+    }
     	});
 
     	return true;
