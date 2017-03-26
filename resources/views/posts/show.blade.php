@@ -25,7 +25,7 @@
 
 <h3>Les Commentaires</h3>
 
-@if($post->count_comment == 0)
+@if(!empty($comments))
 
 Pas encore de Commentaires
 
