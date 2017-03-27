@@ -84,6 +84,43 @@ class UserController extends Controller
 
 
 
+	public function checkTwo(){
+
+		$inputs =  Input::all();
+		if(Input::get('remenber')){
+			$remenber = true;
+		}else{
+			$remenber = false;
+		}
+		$inputs['email'] = e($inputs['email']);
+		$inputs['password'] = e($inputs['password']);
+		$validation = Validator::make($inputs,[
+			'email'=>'required',
+			'password'=>'required',
+			]);
+
+		if($validation->fails()){
+			return Redirect::back()->withErrors($validation);
+		}else{
+			if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']],$remenber)){
+
+				Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']],$remenber);
+
+				return Redirect::route('home')->with('success', 'Vous êtes bien connectés');
+
+			}else{
+				return Redirect::back()->with('error', "Le mot de passe ou le nom de l'utilisateur est incorrect");
+			}
+		}
+
+	}
+
+
+
+
+
+
+
 
 	public function logout(){
 		Auth::logout();

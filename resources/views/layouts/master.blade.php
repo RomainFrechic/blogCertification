@@ -44,38 +44,79 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="{{ URL::route('home') }}">Project name</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
+
               @if(Auth::check())
               
-               @if(Auth::user()->is_admin)
+              @if(Auth::user()->is_admin)
 
               <li><a href="{{ URL::route('home.admin') }}">Administration</a></li>
 
-                @endif
+              @endif
 
               <li class="pull-right"><a href="{{ URL::route('users.logout') }}">Se Déconnecter</a></li>
+
               @else
 
               <li><a href="{{ URL::route('users.login') }}">Se Connecter</a></li>
 
               <li><a href="{{ URL::route('users.register') }}">Créer un Compte</a></li>
-
+              
 
               @endif
 
-               
-              <li class="active"><a href="#">Home</a></li>
-
-              <li><a href="#about">About</a></li>
-
-              <li><a href="#contact">Contact</a></li>
-
             </ul>
-          </div><!--/.nav-collapse -->
+            @if(!Auth::check())
+            <div id="navbar" class="navbar-collapse collapse">
+
+              {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
+
+
+              <div class="form-group">
+
+                {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
+
+                @if($errors->first('email'))
+                <div class="alert alert-danger">
+                  {{ $errors->first('email') }}
+                </div>  
+                @endif
+
+              </div>
+
+              <div class="form-group">
+
+                {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
+
+                @if($errors->first('password'))
+                <div class="alert alert-danger">
+                  {{ $errors->first('password') }}
+                </div>  
+                @endif
+
+              </div>
+
+              {{ Form::submit('Se Connecter',['class'=>'btn btn-success']) }}
+
+              {{ Form::close() }}
+
+            </div><!--/.nav-collapse-->
+            @else
+
+            <div id="navbar" class="navbar-collapse collapse">
+              <div class="navbar-form navbar-right">
+                <div class="form-group">
+                  <img src="..." alt="..." class="img-circle"><h2></h2>
+                </div>
+              </div>
+            </div>
+            @endif
+
+          </div>
         </div>
       </nav>
 
@@ -104,6 +145,36 @@
       </div><!-- /.container -->
 
 
+
+
+
+
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Hello, world!</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+
+      
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -114,3 +185,4 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
   </html>
+

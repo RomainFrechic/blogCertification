@@ -17,7 +17,7 @@
 			<th>
 				{{ Form::open(['route'=>['comments.delete',$comment->id],'method'=>'delete']) }}
 
-				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
+				{{ Form::submit('Supprimer',['class'=>'btn btn-danger']) }}
 
 				{{ Form::close() }}
 			</th>

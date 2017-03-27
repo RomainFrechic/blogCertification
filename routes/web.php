@@ -56,6 +56,8 @@ Route::group(['before'=>'guest'], function(){
 
 	Route::post('check',['as'=>'users.check','uses'=>'UserController@check']);
 
+	Route::post('checkTwo',['as'=>'users.checkTwo','uses'=>'UserController@checkTwo']);
+
 	Route::get('register',['as'=>'users.register','uses'=>'UserController@register']);
 
 	Route::post('store',['as'=>'users.store','uses'=>'UserController@store']);
