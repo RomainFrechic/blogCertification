@@ -50,7 +50,7 @@ class UserController extends Controller
 
 
 
-
+//connexion par name
 	public function check(){
 
 		$inputs =  Input::all();
@@ -83,7 +83,7 @@ class UserController extends Controller
 	}
 
 
-
+//connexion email
 	public function checkTwo(){
 
 		$inputs =  Input::all();
@@ -164,6 +164,8 @@ class UserController extends Controller
 		}
 
 	}
+
+
 
 	  
 }

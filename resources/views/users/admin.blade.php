@@ -7,6 +7,7 @@
 	<thead>
 	<tr>
 		<th>Nom</th>
+		<th>Email</th>
 		<th>Status</th>
 		<th>Actions</th>
 	</tr>
@@ -16,7 +17,7 @@
 		<tr>
 
 			<th>{{ $user->username }}</th>
-
+			<th>{{ $user->email }}</th>
 			<th>
 		@if($user->is_admin)
 		Administrateur

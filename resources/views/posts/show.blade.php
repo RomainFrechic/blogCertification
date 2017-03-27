@@ -27,36 +27,56 @@
 
 @if($comments)
 
+@if(Auth::check())
 @foreach($comments as $comment)
 
-	<h4>Commentaires posté par {{ $comment->user->username }}</h4>
-	<p>{{ $comment->content }}</p>
+	{{ Form::open(['route'=>['comments.delete',$comment->id],'method'=>'delete']) }}
+
+<h4>Commentaires posté par {{ $comment->user->username }}</h4>
+<p>{{ $comment->content }}</p>
+
+	{{ Form::submit('Supprimer',['class'=>'btn btn-danger']) }}
+
+	{{ Form::close() }}
 
 @endforeach
-
+@endif
 @else
 
-	Pas encore de Commentaires
+Pas encore de Commentaires
 
 @endif
 
-<h2>Poster un commentaire</h2>
+<div class="row">
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+			<div class="caption">
+				<h2>Poster un commentaire</h2>
 
-@if(Auth::check())
+				@if(Auth::check())
 
-{{ Form::open(['route'=>['comments.create',$post->id],'method'=>'POST']) }}
-	<div class="form-group">
-		{{ Form::text('comment','',['class'=>'form-control']) }}
+				{{ Form::open(['route'=>['comments.create',$post->id],'method'=>'POST']) }}
+				<div class="form-group">
+					{{ Form::text('comment','',['class'=>'form-control']) }}
+				</div>
+
+				{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
+
+				{{ Form::close() }}
+
+			</div>
+		</div>
 	</div>
-
-	{{ Form::submit('Envoyer',['class'=>'btn btn-primary']) }}
-
-{{ Form::close() }}
-
+</div>
 @else
 
 Pour poster un commentaire <a href="{{ URL::route('users.login') }}">Connecter vous</a>
 
 @endif
 
+
 @stop
+
+
+
+

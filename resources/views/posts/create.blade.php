@@ -25,7 +25,9 @@
 		@endif
 
 </div>
-		{{ Form::submit('Envoyer',['class'=>'btn btn-primary']) }}
+		{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
+		
+
 
 
 

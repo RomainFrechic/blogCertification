@@ -110,7 +110,9 @@
             <div id="navbar" class="navbar-collapse collapse">
               <div class="navbar-form navbar-right">
                 <div class="form-group">
-                  <img src="..." alt="..." class="img-circle"><h2></h2>
+                    
+                  <img src="https://unsplash.com/?photo=BO5BswJwguI" alt="..." class="img-circle">
+                    
                 </div>
               </div>
             </div>
@@ -140,6 +142,8 @@
         @else
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
         @endif -->
+
+       
         @yield('content')
 
       </div><!-- /.container -->
@@ -157,13 +161,7 @@
       <![endif]-->
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Hello, world!</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-        </div>
-      </div>
+     
 
       
 
