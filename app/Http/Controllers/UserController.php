@@ -121,7 +121,7 @@ class UserController extends Controller
 
 
 
-
+	//Se Déconnecter
 	public function logout(){
 		Auth::logout();
 		return Redirect::route('home')->with('success','Vous êtes maintenant déconnecté');

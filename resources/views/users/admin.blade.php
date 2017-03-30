@@ -26,6 +26,8 @@
 		@endif
 			</th>
 			<th>
+			<div class="row">
+			<div class="col-xs-6 col-md-4">
 		{{ Form::open(['route'=>['users.permission',$user->id],'method'=>'POST']) }}
 
 		@if($user->is_admin)
@@ -39,12 +41,15 @@
 		@endif
 		
 		{{ Form::close() }}
-
+		</div>
+		<div class="col-xs-6 col-md-4">
 		{{ Form::open(['route'=>['users.delete',$user->id],'method'=>'delete']) }}
 
 		{{ Form::submit('Suprimer',['class'=>'btn btn-danger']) }}
 
 		{{ Form::close() }}
+		</div>
+		</div>
 			</th>
 		</tr>
 		@endforeach
