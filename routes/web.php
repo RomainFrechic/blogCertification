@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::when('*','csrf',['post','put','delete']);
+
 
 Route::get('/', ['as'=>'home','uses'=>'PostsController@getIndex']);
 
@@ -47,6 +47,12 @@ Route::group(['before'=>'admin'], function(){
 	Route::delete('admin/users/{id}',['as'=>'users.delete','uses'=>'UserController@delete']);
 
 	Route::post('admin/permission/{id}',['as'=>'users.permission','uses'=>'UserController@permission']);
+
+	//Route::get('admin/posts/{id}',['as'=>'posts.add','uses'=>'PostsController@add']);
+
+
+	Route::post('admin/posts/addPost/{id}',['as'=>'posts.addPost','uses'=>'PostsController@addPost']);
+
 });
 
 

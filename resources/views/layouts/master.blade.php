@@ -74,12 +74,13 @@
             <div id="navbar" class="navbar-collapse collapse">
 
               {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
-
+              
+              {{csrf_field()}}
 
               <div class="form-group">
 
                 {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
-
+                
                 @if($errors->first('email'))
                 <div class="alert alert-danger">
                   {{ $errors->first('email') }}

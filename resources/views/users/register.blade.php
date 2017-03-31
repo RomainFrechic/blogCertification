@@ -4,6 +4,8 @@
 
 {{ Form::open(['route'=>'users.store']) }}
 
+{{csrf_field()}}
+
 <div class="form-groupe">
 	{{ Form::label('email','Email') }}
 	{{ Form::text('email','',['class'=>'form-control']) }}

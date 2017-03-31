@@ -5,6 +5,8 @@
 
 {{ Form::open(['route'=>['posts.update',$post->id],'method'=>'post']) }}
 
+{{csrf_field()}}
+
 	<div class="form-group">
 		
 		{{ Form::label('name','Nom :') }}
@@ -23,8 +25,7 @@
 		@endif
 
 </div>
-		{{ Form::submit('Envoyer',['class'=>'btn btn-primary']) }}
-
+		{{ Form::submit('Modifier',['class'=>'btn btn-primary']) }}
 
 
 

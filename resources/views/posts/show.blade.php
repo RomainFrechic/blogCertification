@@ -32,6 +32,8 @@
 
 	{{ Form::open(['route'=>['comments.delete',$comment->id],'method'=>'delete']) }}
 
+	{{csrf_field()}}
+
 <h4>Commentaires posté par {{ $comment->user->username }}</h4>
 <p>{{ $comment->content }}</p>
 

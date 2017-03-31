@@ -7,6 +7,7 @@
 
   {{ Form::open(['route'=>'users.check']) }}
 
+  {{csrf_field()}}
 
   <div class="form-group">
   	

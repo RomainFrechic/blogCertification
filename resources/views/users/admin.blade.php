@@ -30,6 +30,8 @@
 			<div class="col-xs-6 col-md-4">
 		{{ Form::open(['route'=>['users.permission',$user->id],'method'=>'POST']) }}
 
+		{{csrf_field()}}
+
 		@if($user->is_admin)
 				
 		{{ Form::submit('Rendre Menbre',['class'=>'btn btn-primary']) }}

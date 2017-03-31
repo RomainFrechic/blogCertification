@@ -5,7 +5,9 @@
 
 <h2>Créer un Article</h2>
 
-{{ Form::open(['route'=>['posts.update',0],'method'=>'post']) }}
+{{ Form::open(['route'=>['posts.addPost',0],'method'=>'post']) }}
+
+{{csrf_field()}}
 
 	<div class="form-group">
 		
