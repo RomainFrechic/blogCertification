@@ -25,7 +25,7 @@ class CommentsController extends Controller
 		return Redirect::back()->with('success','Le commentaire à bien été supprimer');
 	}
 
-
+   
 
     public function create($id){
     	$post = Post::find($id);

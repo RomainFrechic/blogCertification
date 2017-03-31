@@ -80,7 +80,7 @@
               <div class="form-group">
 
                 {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
-                
+                 {{csrf_field()}}
                 @if($errors->first('email'))
                 <div class="alert alert-danger">
                   {{ $errors->first('email') }}
@@ -92,7 +92,7 @@
               <div class="form-group">
 
                 {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
-
+                   {{csrf_field()}}
                 @if($errors->first('password'))
                 <div class="alert alert-danger">
                   {{ $errors->first('password') }}
@@ -111,8 +111,11 @@
             <div id="navbar" class="navbar-collapse collapse">
               <div class="navbar-form navbar-right">
                 <div class="form-group">
-                    
+                 
+                  
                   <div style="color:grey;"><img src="https://cdn.pixabay.com/photo/2017/01/24/22/55/et-2006631__340.jpg" style="width: 50px;" alt="..." class="img-circle"> Romain</div>
+                  
+                  
               
                 </div>
               </div>

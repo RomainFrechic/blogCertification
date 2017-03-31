@@ -21,6 +21,8 @@ class UserController extends Controller
 		return View('users.admin',compact('users'));
 	}
 
+	 
+
 	public function delete($id){
 		$user = User::find($id);
 		$user->delete();

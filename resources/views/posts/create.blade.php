@@ -27,6 +27,11 @@
 		@endif
 
 </div>
+
+<div class="form-group">
+		{{ Form::label('file','Image :') }}
+		{{ Form::file('file',null,['class'=>'form-control']) }}
+</div>
 		{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
 		{{ Form::close() }}
 

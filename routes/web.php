@@ -18,6 +18,7 @@ Route::get('/posts/{slug}', ['as'=>'posts.show','uses'=>'PostsController@getShow
 
 
 
+
 Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 
@@ -48,9 +49,6 @@ Route::group(['before'=>'admin'], function(){
 
 	Route::post('admin/permission/{id}',['as'=>'users.permission','uses'=>'UserController@permission']);
 
-	//Route::get('admin/posts/{id}',['as'=>'posts.add','uses'=>'PostsController@add']);
-
-
 	Route::post('admin/posts/addPost/{id}',['as'=>'posts.addPost','uses'=>'PostsController@addPost']);
 
 });
@@ -68,11 +66,15 @@ Route::group(['before'=>'guest'], function(){
 
 	Route::post('store',['as'=>'users.store','uses'=>'UserController@store']);
 
+	
+
 });
 
 
 Route::group(['before'=>'auth'], function(){
 
 	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentsController@create']);
+
+	
 
 });

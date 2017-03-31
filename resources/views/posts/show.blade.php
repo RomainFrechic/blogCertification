@@ -4,6 +4,9 @@
 
 
 <h2>{{ $post->name }}</h2>
+<img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
+<p>{{ $post->content }}</p>
+
 <p>Posté par : {{ $author->username }} | 
 
 	@if($post->count_comment == 0) 
@@ -11,19 +14,13 @@
 	Pas de commentaires
 
 	@elseif($post->count_comment == 1)
-
-	1 Commentaire
+	<a href="#">Commentaires <span class="badge">1</span></a>
+	
 
 	@else
-
-	{{ $post->count_comment }} Commentaires
+	<a href="#">Commentaires <span class="badge">{{ $post->count_comment }}</span></a>
 	@endif
 </p>
-
-
-<p>{{ $post->content }}</p>
-
-<h3>Les Commentaires</h3>
 
 @if($comments)
 
@@ -53,7 +50,7 @@ Pas encore de Commentaires
 	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
 			<div class="caption">
-				<h2>Poster un commentaire</h2>
+				<h3>Poster un commentaire</h3>
 
 				@if(Auth::check())
 

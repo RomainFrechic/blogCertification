@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('file');
             $table->text('content');
             $table->integer('count_comment')->default(0);
             $table->integer('categories_id');
