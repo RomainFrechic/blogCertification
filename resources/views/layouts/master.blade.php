@@ -13,7 +13,8 @@
 
   <!-- Bootstrap core CSS -->
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+    rel="stylesheet">
    <link href="carousel.css" rel="stylesheet">
 
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -151,7 +152,7 @@
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
         @endif -->
         
-        
+        @include('parts.caroussel')
 
         @yield('content')
 
@@ -181,7 +182,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>

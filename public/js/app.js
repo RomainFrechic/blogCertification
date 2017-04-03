@@ -11236,6 +11236,8 @@ var app = new Vue({
   el: '#app'
 });
 
+alert('hello funy');
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
