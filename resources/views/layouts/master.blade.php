@@ -14,7 +14,7 @@
   <!-- Bootstrap core CSS -->
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 
-   <link href="../../public/css/carousel.css" rel="stylesheet">
+   <link href="carousel.css" rel="stylesheet">
 
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
@@ -150,7 +150,8 @@
         @else
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
         @endif -->
-
+        
+        
 
         @yield('content')
 
