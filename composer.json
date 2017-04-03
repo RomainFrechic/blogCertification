@@ -10,6 +10,10 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.2.0"
     },
+    " Exiger " : {
+        " Laravel / framework " : " 5.1*. ",
+        "Mayconbordin / 15-moustache " : " dev-master "
+    },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",

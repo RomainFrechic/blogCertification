@@ -16,7 +16,3 @@
 
 
 
-
-	{{ Form::open(['route'=>['posts.brouillon'],'method'=>'post']) }}
-		{{ Form::submit('Enregistrer dans brouillon', ['class'=>'btn btn-info']) }}
-		{{ Form::close() }}

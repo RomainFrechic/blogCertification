@@ -51,6 +51,9 @@ Route::group(['before'=>'admin'], function(){
 
 	Route::post('admin/posts/addPost/{id}',['as'=>'posts.addPost','uses'=>'PostsController@addPost']);
 
+	Route::post('admin/posts/addBrouillon/{id}',['as'=>'posts.addBrouillon','uses'=>'PostsController@addBrouillon']);
+
+
 });
 
 

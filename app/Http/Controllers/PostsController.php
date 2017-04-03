@@ -130,6 +130,32 @@ class PostsController extends Controller
 
 
 
+
+     public function addBrouillon($id){
+
+        $inputs = Input::all();
+        $validation = Validator::make($inputs,[
+            'name'=>'required | min:3',
+            'content'=>'required | min:5',
+            'file'=>'required',
+            ]);
+        if($validation->fails()){
+            return Redirect::back()->withErrors($validation);
+        }else{
+
+                $post = Post::create([
+                'name' => $inputs['name'],
+                'content' => $inputs['content'],
+                'file' => $inputs['file'],
+                'slug' => Str::slug($inputs['name']),
+                'user_id' => Auth::user()->id,
+                ]); 
+                $post->save();
+                return Redirect::route('posts.edit',$post->id)->with('success','Votre post à bien été enregistrer dans brouillon'); 
+        
+             }
+        }
+
       
 
 }

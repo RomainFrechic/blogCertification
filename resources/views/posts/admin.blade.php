@@ -28,7 +28,7 @@
 				<a class="btn btn-info" href="{{ URL::route('posts.edit',$post->id) }}">Modifer</a>
 				</div>
 				<div class="col-xs-6 col-md-2">
-				<a class="btn btn-info" href="#">Brouillon</a>&nbsp;
+				<a class="btn btn-info" href="{{ URL::route('posts.addBrouillon') }}">Brouillon</a>&nbsp;
 				</div>
 				<div class="col-xs-6 col-md-2">
 	{{ Form::open(['route'=>['posts.delete',$post->id],'method'=>'delete']) }}

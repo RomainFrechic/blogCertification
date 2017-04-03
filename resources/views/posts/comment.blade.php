@@ -11,16 +11,15 @@
 @if(Auth::check())
 @foreach($comments as $comment)
 
-	{{ Form::open(['route'=>['comments.delete',$comment->id],'method'=>'delete']) }}
-
-	{{csrf_field()}}
 
 <h4>Commentaires posté par {{ $comment->user->username }}</h4>
 <p>{{ $comment->content }}</p>
 
-	{{ Form::submit('Supprimer',['class'=>'btn btn-danger']) }}
 
-	{{ Form::close() }}
+
+
+
+
 
 @endforeach
 @endif
