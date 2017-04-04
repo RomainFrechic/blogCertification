@@ -152,7 +152,7 @@
         <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
         @endif -->
         
-        @include('parts.caroussel')
+       
 
         @yield('content')
 
