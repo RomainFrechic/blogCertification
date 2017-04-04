@@ -166,39 +166,39 @@
         <div class="col-12 col-md-9">
          
           <div class="jumbotron">
-            <h1>Hello, world!</h1>
+            <h1>The Code, is Awesome!</h1>
             <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
           </div>
           <div class="row">
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>React.js</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="http://reactjs.cn/react/docs/getting-started.html" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Laravel</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="https://laravel.com/" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Symfony</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="http://symfony.com/doc/current/index.html" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Ruby on Rails</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="http://guides.rubyonrails.org/" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Magento</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="https://magento.com/resources/technical" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Bootstrap</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="http://getbootstrap.com/" role="button">Voir les détails &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
@@ -213,7 +213,7 @@
             <a href="https://romainfrechic.github.io/To-Do-List/" class="list-group-item">To do list</a>
             <a href="https://github.com/RomainFrechic?page=2&tab=repositories" class="list-group-item">Github Romain fréchic</a>
             <a href="#" class="list-group-item">Code Plus</a>
-            <a href="#" class="list-group-item">Link</a>
+            <a href="https://stackoverflow.com/" class="list-group-item">Stackoverflow</a>
             <a href="#" class="list-group-item">Link</a>
           </div>
         </div><!--/span-->
