@@ -11,11 +11,14 @@
 
   <title>Blog Romain</title>
 
+<!-- semantic ui css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+
+
   <!-- Bootstrap core CSS -->
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-    rel="stylesheet">
-   <link href="carousel.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+  rel="stylesheet">
 
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
@@ -26,6 +29,8 @@
 
   <!-- Custom styles for this template -->
   <link href="starter-template.css" rel="stylesheet">
+  
+  <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet'>
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -36,153 +41,184 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
+      <style>
+
+        body {
+        
+          background-color:#E7E7E7;
+
+        }
+
+
+        h1 {
+          position: relative;
+          font-size: 70px;
+          margin-top: 0;
+          font-family: 'Lobster', helvetica, arial;
+        }
+
+        h1 a {
+          text-decoration: none;
+          color: #666;
+          position: absolute;
+
+          -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+        }
+
+        h1:after {
+          color: #d6d6d6;
+          text-shadow: 0 1px 0 white;
+        }
+
+        li {
+          color: #403F38;
+          font: 22px 'LeagueGothicRegular';
+          list-style: none;
+        }
+
+        li::hover{
+          color: white;
+        }
+
+
+      </style>
+
     </head>
 
     <body>
 
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse" style="background-color:#9E6A45;">
+
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only"></span>
               <span class="icon-bar"></span>
+             
               <span class="icon-bar"></span>
+           
               <span class="icon-bar"></span>
+             
+               <span class="icon-bar"></span>
+               
             </button>
-            <a class="navbar-brand" href="{{ URL::route('home') }}">Project name</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
+             <li> <a class="navbar-brand" href="{{ URL::route('home') }}">ACCEUIL</a></li>
 
-              @if(Auth::check())
-              
-              @if(Auth::user()->is_admin)
+             <li> <a class="navbar-brand" href="{{ URL::route('layouts.acceuil') }}">ARTICLE</a></li>
 
-              <li><a href="{{ URL::route('home.admin') }}">Administration</a></li>
+             @if(Auth::check())
 
-              @endif
+             @if(Auth::user()->is_admin)
 
-              <li class="pull-right"><a href="{{ URL::route('users.logout') }}">Se Déconnecter</a></li>
+             <li><a href="{{ URL::route('home.admin') }}">ADMINISTRATION</a></li>
 
-              @else
+             @endif
 
-              <li><a href="{{ URL::route('users.login') }}">Se Connecter</a></li>
+             <li class="pull-right"><a href="{{ URL::route('users.logout') }}">SE DECONNECTER</a></li>
 
-              <li><a href="{{ URL::route('users.register') }}">Créer un Compte</a></li>
-              
+             @else
 
-              @endif
+             
 
-            </ul>
-            @if(!Auth::check())
-            <div id="navbar" class="navbar-collapse collapse">
+             <li><a href="{{ URL::route('users.register') }}">CREER UN COMPTE</a></li>
 
-              {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
-              
+
+             @endif
+
+           </ul>
+           @if(!Auth::check())
+           <div id="navbar" class="navbar-collapse collapse">
+
+            {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
+
+            {{csrf_field()}}
+
+            <div class="form-group">
+
+              {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
               {{csrf_field()}}
+              @if($errors->first('email'))
+              <div class="alert alert-danger">
+                {{ $errors->first('email') }}
+              </div>  
+              @endif
 
+            </div>
+
+            <div class="form-group">
+
+              {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
+              {{csrf_field()}}
+              @if($errors->first('password'))
+              <div class="alert alert-danger">
+                {{ $errors->first('password') }}
+              </div>  
+              @endif
+
+            </div>
+
+            {{ Form::submit('Se Connecter',['class'=>'btn btn-default']) }}
+
+            {{ Form::close() }}
+
+          </div><!--/.nav-collapse-->
+          @else
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right">
               <div class="form-group">
 
-                {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
-                 {{csrf_field()}}
-                @if($errors->first('email'))
-                <div class="alert alert-danger">
-                  {{ $errors->first('email') }}
-                </div>  
-                @endif
 
-              </div>
+                <div ><li style="color:#403F38;"><span class="glyphicon glyphicon-user"></span></li> </div>
 
-              <div class="form-group">
 
-                {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
-                   {{csrf_field()}}
-                @if($errors->first('password'))
-                <div class="alert alert-danger">
-                  {{ $errors->first('password') }}
-                </div>  
-                @endif
 
-              </div>
-
-              {{ Form::submit('Se Connecter',['class'=>'btn btn-success']) }}
-
-              {{ Form::close() }}
-
-            </div><!--/.nav-collapse-->
-            @else
-
-            <div id="navbar" class="navbar-collapse collapse">
-              <div class="navbar-form navbar-right">
-                <div class="form-group">
-                 
-                  
-                  <div style="color:grey;"><img src="https://cdn.pixabay.com/photo/2017/01/24/22/55/et-2006631__340.jpg" style="width: 50px;" alt="..." class="img-circle"> Romain</div>
-                  
-                  
-              
-                </div>
               </div>
             </div>
-            @endif
-
           </div>
+          @endif
+
         </div>
-      </nav>
+      </div>
+    </nav>
+    
+    <div class="container">
 
-      <div class="container">
+      <!-- Gestion des message d'erreur dans le dossier layouts-->
+      @if(Session::has('error'))
+      <div class="alert alert-danger">{{ Session::get('error') }}</div>
+      @endif 
 
-        <!-- Gestion des message d'erreur dans le dossier layouts-->
-        @if(Session::has('error'))
-        <div class="alert alert-danger">{{ Session::get('error') }}</div>
-        @endif 
+      @if(Session::has('success'))
+      <div class="alert alert-success">{{ Session::get('success') }}</div>
+      @endif 
 
-        @if(Session::has('success'))
-        <div class="alert alert-success">{{ Session::get('success') }}</div>
-        @endif 
+  
         
-        <!-- @if(Auth::check())
-        @if(Auth::user()->is_admin)
-        <div class="alert alert-success">Vous êtes administrateur</div>
-        @else
-        <div class="alert alert-danger">Vous n'avez pas les droits d'administration</div>
-        @endif
-        @else
-        <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
-        @endif -->
-        
-       
-
         @yield('content')
 
-      </div><!-- /.container -->
+
+      </div>
 
 
 
 
 
-
-
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-     
 
       
 
-      @include('parts.footer')
 
+@include('parts.footer')
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

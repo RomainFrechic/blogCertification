@@ -1,17 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+<link href="../../assets/css/titleArticle.css" rel="stylesheet">
+<style>
+
+
+
+</style>
+</head>
+
+    <body>
+
+
 @extends('layouts.master')
 
 @section('content')
 
 
-
-
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-<h2>{{ $post->name }}</h2>
+<h1>{{ $post->name }}</h1>
 <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
-<p>{{ $post->content }}</p>
+<h3>{{ $post->content }}</h3>
 
 <p>Posté par : {{ $author->username }} |
 
@@ -27,15 +45,14 @@ Pas de commentaires
 
 @elseif($post->count_comment == 1)
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-	<a href="#">Commentaires <span class="badge">1</span></a>
-</button>
+<a data-toggle="modal" data-target="#myModal" href="#">Commentaires <span class="badge">1</span></a>
+</a>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
 	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
+		<div class="modal-content" >
+			<div class="modal-header" style="background-color:#FF5950;">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Commentaires</h4>
 			</div>
@@ -50,7 +67,7 @@ Pas de commentaires
 				<div class="modal-body">
 					<div class="form-group">
 					<h4>{{ $comment->content }}</h4>
-					<p>Commentaires posté par {{ $comment->user->username }}</p>
+					<p style="color:grey">Commentaires posté par {{ $comment->user->username }}</p>
 					</div>
 				</div>
 				@endforeach
@@ -63,7 +80,7 @@ Pas de commentaires
 
 
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer" style="background-color:#FF5950;">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
@@ -76,15 +93,14 @@ Pas de commentaires
 @else
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-	<a href="#">Commentaires <span class="badge">{{ $post->count_comment }}</span></a>
-</button>
+<a data-toggle="modal" data-target="#myModal" href="#">Commentaires <span class="badge">{{ $post->count_comment }}</span></a>
+</a>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" style="background-color:#FF5950;">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Commentaires</h4>
 			</div>
@@ -99,7 +115,7 @@ Pas de commentaires
 				<div class="modal-body">
 					<div class="form-group">
 					<h4>{{ $comment->content }}</h4>
-					<p style="color:blue">Commentaires posté par {{ $comment->user->username }}</p>
+					<p style="color:grey">Commentaires posté par {{ $comment->user->username }}</p>
 					</div>
 				</div>
 				@endforeach
@@ -112,7 +128,7 @@ Pas de commentaires
 
 
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer" style="background-color:#FF5950;">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				
 			</div>
@@ -127,12 +143,12 @@ Pas de commentaires
 
 <!-- form post comment -->
 
-<a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Poster un commentaire</a>
+<a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Commenter</a>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" style="background-color:#FF5950;">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="exampleModalLabel">Poster un commentaire</h4>
 			</div>
@@ -146,7 +162,7 @@ Pas de commentaires
 					{{ Form::textarea('comment','',['class'=>'form-control','id'=>'message-text']) }}
 				</div>
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer" style="background-color:#FF5950;">
 				{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
 
 				{{ Form::close() }}
@@ -169,6 +185,6 @@ Pour poster un commentaire Connecter vous
 
 @stop
 
-
+</body>
 
 

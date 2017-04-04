@@ -21,6 +21,10 @@ class UserController extends Controller
 		return View('users.admin',compact('users'));
 	}
 
+	public function acceuil(){
+		return View('layouts.acceuil');
+	}
+
 	 
 
 	public function delete($id){

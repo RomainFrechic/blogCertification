@@ -57,6 +57,8 @@ Route::group(['before'=>'admin'], function(){
 
 	Route::get('admin/users/{id}',['as'=>'users.modif','uses'=>'UserController@modif']);
 
+	Route::get('admin/layouts/acceuil',['as'=>'layouts.acceuil','uses'=>'UserController@acceuil']);
+
 
 });
 

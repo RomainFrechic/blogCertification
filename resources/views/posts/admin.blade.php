@@ -3,6 +3,13 @@
 
 @section('content')
 
+<style>
+	body {
+          color:black;
+          background-color:white;
+
+        }
+</style>
 
 <h2>Listes des Articles</h2>&nbsp;<a class="btn btn-success" href="{{ URL::route('posts.create') }}">Ajouter un Article</a>
 
@@ -25,10 +32,7 @@
 			<th>
 			<div class="row">
 			<div class="col-xs-6 col-md-2">
-				<a class="btn btn-info" href="{{ URL::route('posts.edit',$post->id) }}">Modifer</a>
-				</div>
-				<div class="col-xs-6 col-md-2">
-				<a class="btn btn-info" href="">Brouillon</a>&nbsp;
+				<a class="btn btn-info" href="{{ URL::route('posts.edit',$post->id) }}"> Modifer</a>&nbsp;
 				</div>
 				<div class="col-xs-6 col-md-2">
 	{{ Form::open(['route'=>['posts.delete',$post->id],'method'=>'delete']) }}

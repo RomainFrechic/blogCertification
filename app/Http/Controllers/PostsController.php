@@ -20,7 +20,7 @@ class PostsController extends Controller
 
     public function getIndex(){
 
-    	$posts = Post::paginate(6);
+    	$posts = Post::paginate(9);
     	return View('posts.index', compact('posts'));
     }
 

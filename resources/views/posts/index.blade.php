@@ -37,37 +37,50 @@
 @section('content')
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-<h1>La liste des Articles</h1>
-  </div>
+  
 </div>
+
+
+    
+ <div class="row">
 @foreach($posts as $post)
 
 
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" style="background-color:#9E6A45" style="width:200px" style="height:200px">
+      <img src="{{ $post->file }}"  alt="...">
+      <div class="caption">
+        <h3>{{ $post->name }}</h3>
+        <!-- <p>{{ $post->content }}</p> -->
+        <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">Lire la suite &raquo;</a></p>
+      </div>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
 
+
+
+<!-- 
 <div class="card" style="width: 20rem;">
   <div class="card-block">
-   <h4 class="card-title"><a href="{{ URL::route('posts.show', $post->slug)}}">
-			<h2>{{ $post->name }}</h2>
-		</a></h4>
+   <h4 class="card-title">
+      <h1>{{ $post->name }}</h1>
+    </h4>
   <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
-    <p class="card-text">{{ $post->content }}</p>
+    <p class="card-text">{{ $post->name }}</p>
     <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">View details &raquo;</a></p>
   </div>
 </div>
 <div style="height:25px;"></div>
   </div>
-</div>        
-	@endforeach  
+</div>  -->       
+  @endforeach  
+</div>
 
-<div>
 	
 	{{ $posts->links() }}
 	
-</div>	
+
 
 	@stop
 

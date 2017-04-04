@@ -3,6 +3,14 @@
 
 @section('content')
 
+<style>
+	body {
+          color:black;
+          background-color:white;
+
+        }
+</style>
+
 <table class="table table-stripped table-bordered">
 	<thead>
 	<tr>
