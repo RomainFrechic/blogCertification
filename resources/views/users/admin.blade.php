@@ -51,6 +51,12 @@
 
 		{{ Form::close() }}
 		</div>
+		
+
+		<div class="col-xs-6 col-md-4">
+		<a class="btn btn-info" href="{{ URL::route('users.modif',$user->id) }}">Modifier Le Profil</a>
+		</div>
+
 		</div>
 			</th>
 		</tr>

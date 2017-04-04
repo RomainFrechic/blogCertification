@@ -36,12 +36,17 @@
 
 @section('content')
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <h1>La liste des Articles</h1>
-
+  </div>
+</div>
 @foreach($posts as $post)
 
 
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
 <div class="card" style="width: 20rem;">
   <div class="card-block">
@@ -54,7 +59,8 @@
   </div>
 </div>
 <div style="height:25px;"></div>
-          
+  </div>
+</div>        
 	@endforeach  
 
 <div>

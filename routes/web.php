@@ -51,7 +51,11 @@ Route::group(['before'=>'admin'], function(){
 
 	Route::post('admin/posts/addPost/{id}',['as'=>'posts.addPost','uses'=>'PostsController@addPost']);
 
-	Route::post('admin/posts/addBrouillon/{id}',['as'=>'posts.addBrouillon','uses'=>'PostsController@addBrouillon']);
+	//Route::post('admin/posts/addBrouillon/{id}',['as'=>'posts.addBrouillon','uses'=>'PostsController@addBrouillon']);
+
+	Route::post('admin/users/modifRegister/{id}',['as'=>'users.modifRegister','uses'=>'UserController@modifRegister']);
+
+	Route::get('admin/users/{id}',['as'=>'users.modif','uses'=>'UserController@modif']);
 
 
 });

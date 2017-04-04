@@ -51,39 +51,43 @@ class UserController extends Controller
 	}
 
 
+		public function modif($id){
+		$user = User::find($id);
+		 if($user){
+		return View('users.modifRegister', compact('user'));	
+	}else{
+		return View('users.register');
+	}
+}
 
-//connexion par name
-	public function check(){
+     public function modifRegister($id){
 
-		$inputs =  Input::all();
-		if(Input::get('remenber')){
-			$remenber = true;
-		}else{
-			$remenber = false;
-		}
-		$inputs['username'] = e($inputs['username']);
-		$inputs['password'] = e($inputs['password']);
+        $inputs = Input::all();
+       $inputs['email'] = e(Input::get('email'));
+		$inputs['username'] = e(Input::get('username'));
+		$inputs['password'] = e(Input::get('password'));
+		$inputs['password_confirm'] = e(Input::get('password_confirm'));
 		$validation = Validator::make($inputs,[
-			'username'=>'required',
-			'password'=>'required',
-			]);
+			'email'=>'required|min:3|unique:users',
+			'username'=>'required|min:3|unique:users',
+			'password'=>'required|min:4',
+			'password_confirm'=>'same:password',
 
+			]);
 		if($validation->fails()){
 			return Redirect::back()->withErrors($validation);
 		}else{
-			if(Auth::attempt(['username'=>$inputs['username'],'password'=>$inputs['password']],$remenber)){
+			$user = User::find($id);
+					$user->email= $inputs['email'];
+					$user->username = $inputs['username'];
+					$user->password = Hash::make($inputs['password']);
 
-				Auth::attempt(['username'=>$inputs['username'],'password'=>$inputs['password']],$remenber);
-
-				return Redirect::route('home')->with('success', 'Vous êtes bien connectés');
-
-			}else{
-				return Redirect::back()->with('error', "Le mot de passe ou le nom de l'utilisateur est incorrect");
-			}
+				
+			$user->save();
+			return Redirect::back()->with('success','le profil à bien été modifier');
 		}
 
 	}
-
 
 //connexion email
 	public function checkTwo(){

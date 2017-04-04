@@ -6,7 +6,8 @@
 
 
 
-
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
 <h2>{{ $post->name }}</h2>
 <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
@@ -162,7 +163,8 @@ Pour poster un commentaire Connecter vous
 @endif
 
 
-
+</div>
+</div>
 
 
 @stop
