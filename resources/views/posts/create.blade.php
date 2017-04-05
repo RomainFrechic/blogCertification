@@ -3,6 +3,7 @@
 
 @section('content')
 
+<div style="font-family: 'Arbutus', cursive;">
 <h2>Créer un Article</h2>
 
 
@@ -29,17 +30,17 @@
 
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
 		{{ Form::label('file','Image :') }}
 		{{ Form::file('file',null,['class'=>'form-control']) }}
-</div>
+</div> -->
 		{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
 		
 
 		{{ Form::close() }}
 		
 
-
+</div>
 
 
 

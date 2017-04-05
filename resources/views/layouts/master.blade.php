@@ -11,6 +11,10 @@
 
   <title>Blog Romain</title>
 
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
 <!-- semantic ui css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
 
@@ -50,19 +54,16 @@
         }
 
 
-        h1 {
-          position: relative;
-          font-size: 70px;
-          margin-top: 0;
-          font-family: 'Lobster', helvetica, arial;
+        h1{
+          font-family: 'Bungee Shade', cursive;
         }
 
-        h1 a {
-          text-decoration: none;
-          color: #666;
-          position: absolute;
+        p{
+         font-family: 'Arbutus', cursive;
+        }
 
-          -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+        h3{
+         font-family: 'Arbutus', cursive;
         }
 
         h1:after {
@@ -76,9 +77,13 @@
           list-style: none;
         }
 
-        li::hover{
-          color: white;
-        }
+         li:hover{
+          color:white;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        
+              }
 
 
       </style>
@@ -106,25 +111,25 @@
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
-             <li> <a class="navbar-brand" href="{{ URL::route('home') }}">ACCEUIL</a></li>
+             <li> <a class="navbar-brand" href="{{ URL::route('home') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ACCEUIL</a></li>
 
-             <li> <a class="navbar-brand" href="{{ URL::route('layouts.acceuil') }}">ARTICLE</a></li>
+             <li> <a class="navbar-brand" href="{{ URL::route('layouts.acceuil') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ARTICLE</a></li>
 
              @if(Auth::check())
 
              @if(Auth::user()->is_admin)
 
-             <li><a href="{{ URL::route('home.admin') }}">ADMINISTRATION</a></li>
+             <li><a href="{{ URL::route('home.admin') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ADMINISTRATION</a></li>
 
              @endif
 
-             <li class="pull-right"><a href="{{ URL::route('users.logout') }}">SE DECONNECTER</a></li>
+             <li class="pull-right"><a href="{{ URL::route('users.logout') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">SE DECONNECTER</a></li>
 
              @else
 
              
 
-             <li><a href="{{ URL::route('users.register') }}">CREER UN COMPTE</a></li>
+             <li><a href="{{ URL::route('users.register') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">CREER UN COMPTE</a></li>
 
 
              @endif

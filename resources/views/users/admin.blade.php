@@ -11,6 +11,7 @@
         }
 </style>
 
+
 <table class="table table-stripped table-bordered">
 	<thead>
 	<tr>
@@ -73,4 +74,6 @@
 
 </table>
 
+
+<div style="height:540px"></div>
 @stop

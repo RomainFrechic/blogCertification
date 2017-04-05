@@ -3,7 +3,7 @@
 
 @section('content')
 
-
+<div style="font-family: 'Arbutus', cursive;">
 <h3>Les Commentaires</h3>
 <a href="#">Commentaire <span class="badge">{{ $post->count_comment }}</span></a>
 @if($comments)
@@ -29,5 +29,5 @@ Pas encore de Commentaires
 
 @endif
 
-
+</div>
 @stop

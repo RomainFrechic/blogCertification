@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 {{ Form::open(['route'=>'users.store']) }}
 
 {{csrf_field()}}

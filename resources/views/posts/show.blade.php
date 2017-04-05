@@ -25,11 +25,11 @@
 
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-xs-12 col-md-8">
 
 <h1>{{ $post->name }}</h1>
-<img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
-<h3>{{ $post->content }}</h3>
+<!-- <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap"> -->
+<p>{{ $post->content }}</p>
 
 <p>Posté par : {{ $author->username }} |
 
@@ -143,7 +143,7 @@ Pas de commentaires
 
 <!-- form post comment -->
 
-<a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Commenter</a>
+<a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" style="font-family: 'Arbutus', cursive;">Commenter</a>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 	<div class="modal-dialog" role="document">
@@ -182,7 +182,7 @@ Pour poster un commentaire Connecter vous
 </div>
 </div>
 
-
+<div style="height:440px"></div>
 @stop
 
 </body>

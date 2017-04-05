@@ -27,11 +27,12 @@
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
+  
+      <style>
+      .rotate{
+       box-shadow:2px 2px grey;
+      }
+      </style>
     </head>
 
 @section('content')
@@ -45,35 +46,20 @@
  <div class="row">
 @foreach($posts as $post)
 
-
+<div class="rotate">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail" style="background-color:#9E6A45" style="width:200px" style="height:200px">
-      <img src="{{ $post->file }}"  alt="...">
+      <!--<img src="{{ $post->file }}"  alt="...">-->
       <div class="caption">
         <h3>{{ $post->name }}</h3>
-        <!-- <p>{{ $post->content }}</p> -->
+        <p>{{ $post->content }}</p>
         <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">Lire la suite &raquo;</a></p>
       </div>
     </div>
   </div>
-
-
-
-
-<!-- 
-<div class="card" style="width: 20rem;">
-  <div class="card-block">
-   <h4 class="card-title">
-      <h1>{{ $post->name }}</h1>
-    </h4>
-  <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
-    <p class="card-text">{{ $post->name }}</p>
-    <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">View details &raquo;</a></p>
-  </div>
 </div>
-<div style="height:25px;"></div>
-  </div>
-</div>  -->       
+
+      
   @endforeach  
 </div>
 

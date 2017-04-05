@@ -11,6 +11,7 @@
         }
 </style>
 
+
 <h2>Listes des Articles</h2>&nbsp;<a class="btn btn-success" href="{{ URL::route('posts.create') }}">Ajouter un Article</a>
 
 <table class="table table-stripped table-bordered">

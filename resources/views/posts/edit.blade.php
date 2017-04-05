@@ -3,6 +3,7 @@
 
 @section('content')
 
+<div style="font-family: 'Arbutus', cursive;">
 {{ Form::open(['route'=>['posts.update',$post->id],'method'=>'post']) }}
 
 {{csrf_field()}}
@@ -31,4 +32,5 @@
 
 {{ Form::close() }}
 
+</div>
 @stop
