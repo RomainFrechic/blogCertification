@@ -5,24 +5,24 @@
 
 <style>
 	body {
-          color:black;
-          background-color:white;
+		color:black;
+		background-color:white;
 
-        }
+	}
 </style>
 
 
 <table class="table table-stripped table-bordered">
 	<thead>
-	<tr>
-		<th>Post</th>
-		<th>Nom</th>
-		<th>Commentaires</th>
-		<th>Actions</th>
-	</tr>
+		<tr>
+			<th>Post</th>
+			<th>Nom</th>
+			<th>Commentaires</th>
+			<th>Actions</th>
+		</tr>
 	</thead>
 	<tbody>
-	
+		
 		@foreach($comments as $comment)
 		<tr>
 			<th>{{ $comment->post->slug }}</th></th>

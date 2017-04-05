@@ -6,27 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-   protected $guarded = ['id','created_at'];
+ protected $guarded = ['id','created_at'];
 
-   public static function boot(){
-    	parent::boot();
-    	self::created(function($post){
+ public static function boot(){
+   parent::boot();
+   self::created(function($post){
     $post->count_comment = 0;
-    	});
-    	self::deleted(function($post){
+  });
+   self::deleted(function($post){
     $comments = $post->comments;
     foreach ($comments as $comment) {
     	$comment->delete();
     }
-    	});
-    return true;	
+  });
+   return true;	
+ }
+
+ public function user(){
+  return $this->belongsTo('App\User');
 }
 
-   public function user(){
-   	return $this->belongsTo('App\User');
-   }
-
-   public function comments(){
-   	return $this->hasMany('App\Comment');
-   }
+public function comments(){
+  return $this->hasMany('App\Comment');
+}
 }

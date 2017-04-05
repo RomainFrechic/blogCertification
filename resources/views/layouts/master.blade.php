@@ -11,12 +11,12 @@
 
   <title>Blog Romain</title>
 
-<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
-<!-- semantic ui css -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
+  <!-- semantic ui css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
 
 
   <!-- Bootstrap core CSS -->
@@ -48,7 +48,7 @@
       <style>
 
         body {
-        
+          
           background-color:#E7E7E7;
 
         }
@@ -60,164 +60,164 @@
 
         p{
          font-family: 'Arbutus', cursive;
-        }
+       }
 
-        h3{
+       h3{
          font-family: 'Arbutus', cursive;
-        }
+       }
 
-        h1:after {
-          color: #d6d6d6;
-          text-shadow: 0 1px 0 white;
-        }
+       h1:after {
+        color: #d6d6d6;
+        text-shadow: 0 1px 0 white;
+      }
 
-        li {
-          color: #403F38;
-          font: 22px 'LeagueGothicRegular';
-          list-style: none;
-        }
+      li {
+        color: #403F38;
+        font: 22px 'LeagueGothicRegular';
+        list-style: none;
+      }
 
-         li:hover{
-          color:white;
+      li:hover{
+        color:white;
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
         
-              }
+      }
 
 
-      </style>
+    </style>
 
-    </head>
+  </head>
 
-    <body>
+  <body>
 
-      <nav class="navbar navbar-inverse" style="background-color:#9E6A45;">
+    <nav class="navbar navbar-inverse" style="background-color:#9E6A45;">
 
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only"></span>
-              <span class="icon-bar"></span>
-             
-              <span class="icon-bar"></span>
-           
-              <span class="icon-bar"></span>
-             
-               <span class="icon-bar"></span>
-               
-            </button>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-
-             <li> <a class="navbar-brand" href="{{ URL::route('home') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ACCEUIL</a></li>
-
-             <li> <a class="navbar-brand" href="{{ URL::route('layouts.acceuil') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ARTICLE</a></li>
-
-             @if(Auth::check())
-
-             @if(Auth::user()->is_admin)
-
-             <li><a href="{{ URL::route('home.admin') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ADMINISTRATION</a></li>
-
-             @endif
-
-             <li class="pull-right"><a href="{{ URL::route('users.logout') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">SE DECONNECTER</a></li>
-
-             @else
-
-             
-
-             <li><a href="{{ URL::route('users.register') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">CREER UN COMPTE</a></li>
-
-
-             @endif
-
-           </ul>
-           @if(!Auth::check())
-           <div id="navbar" class="navbar-collapse collapse">
-
-            {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
-
-            {{csrf_field()}}
-
-            <div class="form-group">
-
-              {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
-              {{csrf_field()}}
-              @if($errors->first('email'))
-              <div class="alert alert-danger">
-                {{ $errors->first('email') }}
-              </div>  
-              @endif
-
-            </div>
-
-            <div class="form-group">
-
-              {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
-              {{csrf_field()}}
-              @if($errors->first('password'))
-              <div class="alert alert-danger">
-                {{ $errors->first('password') }}
-              </div>  
-              @endif
-
-            </div>
-
-            {{ Form::submit('Se Connecter',['class'=>'btn btn-default']) }}
-
-            {{ Form::close() }}
-
-          </div><!--/.nav-collapse-->
-          @else
-
-          <div id="navbar" class="navbar-collapse collapse">
-            <div class="navbar-form navbar-right">
-              <div class="form-group">
-
-
-                <div ><li style="color:#403F38;"><span class="glyphicon glyphicon-user"></span></li> </div>
-
-
-
-              </div>
-            </div>
-          </div>
-          @endif
-
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            
+            <span class="icon-bar"></span>
+            
+            <span class="icon-bar"></span>
+            
+            <span class="icon-bar"></span>
+            
+          </button>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+
+           <li> <a class="navbar-brand" href="{{ URL::route('home') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ACCEUIL</a></li>
+
+           <li> <a class="navbar-brand" href="{{ URL::route('layouts.acceuil') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ARTICLE</a></li>
+
+           @if(Auth::check())
+
+           @if(Auth::user()->is_admin)
+
+           <li><a href="{{ URL::route('home.admin') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">ADMINISTRATION</a></li>
+
+           @endif
+
+           <li class="pull-right"><a href="{{ URL::route('users.logout') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">SE DECONNECTER</a></li>
+
+           @else
+
+           
+
+           <li><a href="{{ URL::route('users.register') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">CREER UN COMPTE</a></li>
+
+
+           @endif
+
+         </ul>
+         @if(!Auth::check())
+         <div id="navbar" class="navbar-collapse collapse">
+
+          {{ Form::open(['route'=>'users.checkTwo','class'=>'navbar-form navbar-right']) }}
+
+          {{csrf_field()}}
+
+          <div class="form-group">
+
+            {{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
+            {{csrf_field()}}
+            @if($errors->first('email'))
+            <div class="alert alert-danger">
+              {{ $errors->first('email') }}
+            </div>  
+            @endif
+
+          </div>
+
+          <div class="form-group">
+
+            {{ Form::password('password',['placeholder'=>'password','class'=>'form-control']) }}
+            {{csrf_field()}}
+            @if($errors->first('password'))
+            <div class="alert alert-danger">
+              {{ $errors->first('password') }}
+            </div>  
+            @endif
+
+          </div>
+
+          {{ Form::submit('Se Connecter',['class'=>'btn btn-default']) }}
+
+          {{ Form::close() }}
+
+        </div><!--/.nav-collapse-->
+        @else
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <div class="form-group">
+
+
+              <div ><li style="color:#403F38;"><span class="glyphicon glyphicon-user"></span></li> </div>
+
+
+
+            </div>
+          </div>
+        </div>
+        @endif
+
       </div>
-    </nav>
+    </div>
+  </nav>
+  
+  <div class="container">
+
+    <!-- Gestion des message d'erreur dans le dossier layouts-->
+    @if(Session::has('error'))
+    <div class="alert alert-danger">{{ Session::get('error') }}</div>
+    @endif 
+
+    @if(Session::has('success'))
+    <div class="alert alert-success">{{ Session::get('success') }}</div>
+    @endif 
+
     
-    <div class="container">
+    
+    @yield('content')
 
-      <!-- Gestion des message d'erreur dans le dossier layouts-->
-      @if(Session::has('error'))
-      <div class="alert alert-danger">{{ Session::get('error') }}</div>
-      @endif 
 
-      @if(Session::has('success'))
-      <div class="alert alert-success">{{ Session::get('success') }}</div>
-      @endif 
+  </div>
+
+
+
+
+
 
   
-        
-        @yield('content')
 
 
-      </div>
-
-
-
-
-
-
-      
-
-
-@include('parts.footer')
+  @include('parts.footer')
 
 
     <!-- Bootstrap core JavaScript

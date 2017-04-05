@@ -28,12 +28,12 @@
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
   
-      <style>
-      .rotate{
-       box-shadow:2px 2px grey;
-      }
-      </style>
-    </head>
+  <style>
+    .rotate{
+     box-shadow:2px 2px grey;
+   }
+ </style>
+</head>
 
 @section('content')
 
@@ -42,43 +42,43 @@
 </div>
 
 
-    
- <div class="row">
-@foreach($posts as $post)
 
-<div class="rotate">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail" style="background-color:#9E6A45" style="width:200px" style="height:200px">
-      <!--<img src="{{ $post->file }}"  alt="...">-->
-      <div class="caption">
-        <h3>{{ $post->name }}</h3>
-        <p>{{ $post->content }}</p>
-        <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">Lire la suite &raquo;</a></p>
+<div class="row">
+  @foreach($posts as $post)
+
+  <div class="rotate">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail" style="background-color:#9E6A45" style="width:200px" style="height:200px">
+        <!--<img src="{{ $post->file }}"  alt="...">-->
+        <div class="caption">
+          <h3>{{ $post->name }}</h3>
+          <p>{{ $post->content }}</p>
+          <p><a class="btn btn-default" href="{{ URL::route('posts.show', $post->slug)}}" role="button">Lire la suite &raquo;</a></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-      
+  
   @endforeach  
 </div>
 
-	
-	{{ $posts->links() }}
-	
+
+{{ $posts->links() }}
 
 
-	@stop
+
+@stop
 
 
 
    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-  </html>
+   ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+   <script src="../../dist/js/bootstrap.min.js"></script>
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ </body>
+ </html>

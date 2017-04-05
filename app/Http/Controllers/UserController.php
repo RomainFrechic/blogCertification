@@ -25,7 +25,7 @@ class UserController extends Controller
 		return View('layouts.acceuil');
 	}
 
-	 
+	
 
 	public function delete($id){
 		$user = User::find($id);
@@ -55,19 +55,19 @@ class UserController extends Controller
 	}
 
 
-		public function modif($id){
+	public function modif($id){
 		$user = User::find($id);
-		 if($user){
-		return View('users.modifRegister', compact('user'));	
-	}else{
-		return View('users.register');
+		if($user){
+			return View('users.modifRegister', compact('user'));	
+		}else{
+			return View('users.register');
+		}
 	}
-}
 
-     public function modifRegister($id){
+	public function modifRegister($id){
 
-        $inputs = Input::all();
-       $inputs['email'] = e(Input::get('email'));
+		$inputs = Input::all();
+		$inputs['email'] = e(Input::get('email'));
 		$inputs['username'] = e(Input::get('username'));
 		$inputs['password'] = e(Input::get('password'));
 		$inputs['password_confirm'] = e(Input::get('password_confirm'));
@@ -82,11 +82,11 @@ class UserController extends Controller
 			return Redirect::back()->withErrors($validation);
 		}else{
 			$user = User::find($id);
-					$user->email= $inputs['email'];
-					$user->username = $inputs['username'];
-					$user->password = Hash::make($inputs['password']);
+			$user->email= $inputs['email'];
+			$user->username = $inputs['username'];
+			$user->password = Hash::make($inputs['password']);
 
-				
+			
 			$user->save();
 			return Redirect::back()->with('success','le profil à bien été modifier');
 		}
@@ -164,9 +164,9 @@ class UserController extends Controller
 			return Redirect::back()->withErrors($validation);
 		}else{
 			$user = User::create([
-					'email'=>$inputs['email'],
-					'username'=>$inputs['username'],
-					'password'=>Hash::make($inputs['password']),
+				'email'=>$inputs['email'],
+				'username'=>$inputs['username'],
+				'password'=>Hash::make($inputs['password']),
 
 				]);
 			$user->save();
@@ -177,5 +177,5 @@ class UserController extends Controller
 
 
 
-	  
+	
 }

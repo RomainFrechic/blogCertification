@@ -1,5 +1,5 @@
 <hr>
 
-      <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
+<footer>
+	<p>&copy; 2016 Company, Inc.</p>
+</footer>

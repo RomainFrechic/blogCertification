@@ -4,38 +4,38 @@
 @section('content')
 
 <div style="font-family: 'Arbutus', cursive;">
-<h2>Créer un Article</h2>
+	<h2>Créer un Article</h2>
 
 
-{{ Form::open(['route'=>['posts.addPost',0],'method'=>'post']) }}
+	{{ Form::open(['route'=>['posts.addPost',0],'method'=>'post']) }}
 
-{{csrf_field()}}
+	{{csrf_field()}}
 
 	<div class="form-group">
 		
 		{{ Form::label('name','Nom :') }}
 		{{ Form::text('name','',['class'=>'form-control']) }}
 		@if($errors->first('name'))
-			<div class="alert alert-danger">{{ $errors->first('name') }}</div>
+		<div class="alert alert-danger">{{ $errors->first('name') }}</div>
 		@endif		
 	</div>
 
-<div class="form-group">
+	<div class="form-group">
 		{{ Form::label('content','Contenu :') }}
 		{{ Form::textarea('content','',
 		['class'=>'form-control']) }}
 		@if($errors->first('content'))
-			<div class="alert alert-danger">{{ $errors->first('content') }}</div>
+		<div class="alert alert-danger">{{ $errors->first('content') }}</div>
 		@endif
 
-</div>
+	</div>
 
 
-		{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
-		
+	{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
+	
 
-		{{ Form::close() }}
-		
+	{{ Form::close() }}
+	
 
 </div>
 

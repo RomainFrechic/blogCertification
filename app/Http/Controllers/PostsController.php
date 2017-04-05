@@ -53,79 +53,79 @@ class PostsController extends Controller
 
 
 
-     public function edit($id){
+    public function edit($id){
 
         $post = Post::find($id);
         if($post){
 
             return View('posts.edit',compact('post'));    
-         }else{
-             return View('posts.create');
-         }
-    }
+        }else{
+           return View('posts.create');
+       }
+   }
 
    
 
 
-     public function delete($id){
+   public function delete($id){
 
-        $post = Post::find($id);
-        $post->destroy($post->id);
-        return Redirect::back()->with('success','Votre post à bien été supprimé');
-    }
-
-
-
-
-
-     public function update($id){
-
-        $inputs = Input::all();
-        $validation = Validator::make($inputs,[
-            'name'=>'required | min:3',
-            'content'=>'required | min:5',
-            ]);
-        if($validation->fails()){
-            return Redirect::back()->withErrors($validation);
-        }else{
-            
-                $post = Post::find($id);
-                $post->name = $inputs['name'];
-                $post->content = $inputs['content'];
-                $post->slug = Str::slug($inputs['name']);
-                $post->save();
-                return Redirect::back()->with('success','Votre post à bien été modifier');  
-        }
-     }
-
-    
+    $post = Post::find($id);
+    $post->destroy($post->id);
+    return Redirect::back()->with('success','Votre post à bien été supprimé');
+}
 
 
 
 
-     public function addPost($id){
 
-        $inputs = Input::all();
-        $validation = Validator::make($inputs,[
-            'name'=>'required | min:3',
-            'content'=>'required | min:5',
-            ]);
-        if($validation->fails()){
-            return Redirect::back()->withErrors($validation);
-        }else{
+public function update($id){
 
-                $post = Post::create([
-                'name' => $inputs['name'],
-                'content' => $inputs['content'],
-                'slug' => Str::slug($inputs['name']),
-                'user_id' => Auth::user()->id,
-                ]); 
-                $post->save();
-                return Redirect::route('posts.edit',$post->id)->with('success','Votre post à bien été créer'); 
+    $inputs = Input::all();
+    $validation = Validator::make($inputs,[
+        'name'=>'required | min:3',
+        'content'=>'required | min:5',
+        ]);
+    if($validation->fails()){
+        return Redirect::back()->withErrors($validation);
+    }else{
         
-             }
-        }
+        $post = Post::find($id);
+        $post->name = $inputs['name'];
+        $post->content = $inputs['content'];
+        $post->slug = Str::slug($inputs['name']);
+        $post->save();
+        return Redirect::back()->with('success','Votre post à bien été modifier');  
+    }
+}
 
-      
+
+
+
+
+
+public function addPost($id){
+
+    $inputs = Input::all();
+    $validation = Validator::make($inputs,[
+        'name'=>'required | min:3',
+        'content'=>'required | min:5',
+        ]);
+    if($validation->fails()){
+        return Redirect::back()->withErrors($validation);
+    }else{
+
+        $post = Post::create([
+            'name' => $inputs['name'],
+            'content' => $inputs['content'],
+            'slug' => Str::slug($inputs['name']),
+            'user_id' => Auth::user()->id,
+            ]); 
+        $post->save();
+        return Redirect::route('posts.edit',$post->id)->with('success','Votre post à bien été créer'); 
+        
+    }
+}
+
+
 
 }
