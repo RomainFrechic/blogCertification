@@ -109,7 +109,6 @@ class PostsController extends Controller
         $validation = Validator::make($inputs,[
             'name'=>'required | min:3',
             'content'=>'required | min:5',
-            // 'file'=>'required',
             ]);
         if($validation->fails()){
             return Redirect::back()->withErrors($validation);
@@ -118,7 +117,6 @@ class PostsController extends Controller
                 $post = Post::create([
                 'name' => $inputs['name'],
                 'content' => $inputs['content'],
-                // 'file' => $inputs['file'],
                 'slug' => Str::slug($inputs['name']),
                 'user_id' => Auth::user()->id,
                 ]); 
