@@ -24,6 +24,22 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
   rel="stylesheet">
 
+  <!-- Firebase -->
+  
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCirPB20dwg5YV5e7p99YqFmWCLR8Eb2fE",
+    authDomain: "blog-c775b.firebaseapp.com",
+    databaseURL: "https://blog-c775b.firebaseio.com",
+    projectId: "blog-c775b",
+    storageBucket: "blog-c775b.appspot.com",
+    messagingSenderId: "68095867787"
+  };
+  firebase.initializeApp(config);
+</script>
+  <!-- Firebase fin -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
@@ -48,7 +64,7 @@
       <style>
 
         body {
-          
+
           background-color:#E7E7E7;
 
         }
@@ -99,13 +115,13 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only"></span>
             <span class="icon-bar"></span>
-            
+
             <span class="icon-bar"></span>
-            
+
             <span class="icon-bar"></span>
-            
+
             <span class="icon-bar"></span>
-            
+
           </button>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -127,7 +143,7 @@
 
            @else
 
-           
+
 
            <li><a href="{{ URL::route('users.register') }}" style="font-family: 'Arbutus', cursive; color: #403F38;">CREER UN COMPTE</a></li>
 
@@ -190,7 +206,7 @@
       </div>
     </div>
   </nav>
-  
+
   <div class="container">
 
     <!-- Gestion des message d'erreur dans le dossier layouts-->
@@ -202,8 +218,8 @@
     <div class="alert alert-success">{{ Session::get('success') }}</div>
     @endif 
 
-    
-    
+
+
     @yield('content')
 
 
@@ -214,7 +230,7 @@
 
 
 
-  
+
 
 
   @include('parts.footer')

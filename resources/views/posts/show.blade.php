@@ -28,7 +28,7 @@
 		<div class="col-xs-12 col-md-8">
 
 			<h1>{{ $post->name }}</h1>
-			<!-- <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap"> -->
+			
 			<p>{{ $post->content }}</p>
 
 			<p>Posté par : {{ $author->username }} |
@@ -130,7 +130,7 @@
 					</div>
 					<div class="modal-footer" style="background-color:#FF5950;">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						
+
 					</div>
 				</div>
 			</div>

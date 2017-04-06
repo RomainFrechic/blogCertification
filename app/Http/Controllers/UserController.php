@@ -51,7 +51,7 @@ class UserController extends Controller
 
 
 	public function login(){
-		return View('users.login');
+		return Redirect::back()->with('success','Vore compte à été créer');
 	}
 
 
